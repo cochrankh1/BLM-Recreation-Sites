@@ -1,0 +1,90 @@
+<html>
+<head>
+
+    <meta charset=utf-8 />
+    <title>Oregon/Washington BLM Site Perceptual Circle Scaling</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+<style>
+
+    body {
+        margin:0;
+        padding:0;
+        font-family:
+        sans-serif;
+    }
+    
+    h1 {
+        position: absolute;
+        left: 50px;
+        top: 10px;
+        padding: 8px 2%;
+        margin: 0;
+        background: rgba(0, 81, 255, 0.8);
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        border-radius: 3px;
+        color: rgb(245, 245, 245);
+        font-size: 1.5em;
+        z-index: 800;
+    }
+
+    #map {
+        position:absolute;
+        top:0;
+        bottom:0;
+        width:1200px;
+        height: 600px;
+    }
+
+</style>
+
+</head>
+<body>
+
+    <div id='map'></div>
+    <h1>Oregon/Washington BLM Recreation Site Points, 2024</h1>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+
+<script>
+    
+    console.log("hello world!");
+
+    var map = L.map('map', {
+        center: [45.738338, -120.607920],
+        zoom: 5.5
+    });
+
+    var Esri_WorldTopoMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+	    attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+    }).addTo(map);
+
+    states = L.geoJson.ajax("assets/data.geojson", {
+    attribution: 'Data: US Department of the Interior, Map: K. Cochran',
+    pointToLayer: function (feature, x){
+    return L.circleMarker(x, {
+    color: '#00008b',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#add8e6',
+    fillOpacity: .6,
+    radius: 5
+    }).on({
+
+        mouseover: function(e){
+            this.setStyle({color: 'oreange',fillColor: 'orange'});
+            },
+        mouseout: function(e){
+            this.setStyle({color:'#00008b', fillColor: '#add8e6'});
+            } })},});
+
+    states.addTo(map);
+
+    L.control.scale({position: 'topright'}).addTo(map);
+
+</script>
+
+</body>
+</html> 
