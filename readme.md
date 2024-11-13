@@ -10,7 +10,7 @@ By Killian Cochran
 **A visual resource for people recreating in the PNW** 
 
 
-A few years ago I moved out to Oregon with no knowledge of BLM recreation sites and public free camping. That quickly changed when someone introduced me to the idea and educated me on the concept. This opened up endless possibility for traveling throughout the PNW in my van, camping for free in some of the most beautiful public lands I have ever seen. I then found out about all the different phone apps that were developed for camping on public lands. That is what inspired me to create this circle map.
+A few years ago I moved out to Oregon with no knowledge of BLM recreation sites and public free camping. That quickly changed when someone educated me on the idea. This opened up endless possibility for traveling throughout the PNW in my van, camping for free in some of the most beautiful public lands I have ever seen. I then found out about all the different phone apps that were developed for camping on public lands. That is what inspired me to create this circle map.
 
 The major functions of this map are the the locations of individual BLM recreation site points indicated by the blue circles. When you hover over an individual sight, it highlights orange. Then when you zoom in on the map to a certain location, the radius size stays the same as you zoom. Also, as you zoom in or out, the scale bar in the top right corner adjusts itself automatically to the new scale. 
 
